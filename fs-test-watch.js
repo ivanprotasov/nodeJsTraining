@@ -1,13 +1,10 @@
 "use strict"
+const fs = require("fs"),
+    filename = process.argv[2],
+    method = process.argv[3];
 
-const fs = require("fs");
-
-fs.watch("HelloWorld.txt", function(){
-    console.log("!")
+fs.watch(filename, function(){
+    console.log("File " + filename +" has been changed!" )
 });
 
-console.log("Start!")
-
-function foo(){
-
-}
+console.log("Start watching " + filename +"!")
